@@ -10,7 +10,15 @@
 		1CF7C6B11A4FE36600AF9A44 = {
 			isa = PBXGroup;
 			children = (
+				1CF7C6B91A4FEA8800AF9A44 /* GeneralApp */,
 			);
+			sourceTree = "<group>";
+		};
+		1CF7C6B91A4FEA8800AF9A44 /* GeneralApp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GeneralApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
