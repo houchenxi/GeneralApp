@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SwitchViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // 创建根控制器实例，并且赋给AppDelegate的属性保存
+    self.switchViewController = [[SwitchViewController alloc]
+                                 initWithNibName:@"SwitchView" bundle:nil];
+
+    // 从SwitchViewController.xib中加载视图
+    UIView* switchView = self.switchViewController.view;
+    
+    // 修改属性，以免状态栏覆盖这个视图
+    CGRect switchViewFrame = switchView.frame;
+    // 使视图紧靠状态栏底部
+    switchViewFrame.origin.y += [UIApplication
+                                 sharedApplication].statusBarFrame.size.height;
+    // 设置根控制器控制的视图
+    switchView.frame = switchViewFrame;
+    
+    // 根控制器的关联视图设置完毕，设置到窗口属性的根控制器属性
+    self.window.rootViewController = self.switchViewController;
+    
+    // 设置窗口背景色为白色
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
