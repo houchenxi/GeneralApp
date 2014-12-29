@@ -17,7 +17,11 @@
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4hf-87-IEA">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <items>
-                        <barButtonItem title="Switch View" id="8Ou-sN-UT2"/>
+                        <barButtonItem title="Switch View" id="8Ou-sN-UT2">
+                            <connections>
+                                <action selector="switchViews:" destination="-1" id="bu3-N2-nGp"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
             </subviews>
