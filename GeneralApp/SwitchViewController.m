@@ -52,6 +52,12 @@
 #pragma mark - 此函数用来切换主视图的子视图
 - (IBAction)switchViews:(id)sender {
     
+    // 增加切换动画
+    // 设置动画的变化速度特征和播放事件
+    [UIView beginAnimations:@"View Flip" context:nil];
+    [UIView setAnimationDuration: 1.25];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    
     if (self.yellowViewController.view.superview == nil) {
         
         // 加载黄色视图的代码
@@ -59,6 +65,13 @@
             self.yellowViewController =
             [ [YellowViewController alloc] initWithNibName:@"YellowViewController" bundle:nil ];
         }
+        
+        // 增加切换动画
+        // 设置动画的迁移类型为从右翻转
+        [UIView setAnimationTransition:
+            UIViewAnimationTransitionFlipFromRight
+                               forView:self.view
+                                cache: YES];
         
         // 对视图进行替换，把蓝色替换为黄色
         [self UpdateSubView: self.yellowViewController oldCtrl: self.blueViewController];
@@ -68,12 +81,21 @@
             self.blueViewController =
             [ [BlueViewController alloc] initWithNibName:@"BlueViewController" bundle:nil ];
         }
+        
+        // 增加切换动画
+        // 设置动画的迁移类型为从左翻转
+        [UIView setAnimationTransition:
+            UIViewAnimationTransitionFlipFromLeft
+                               forView:self.view
+                                cache: YES];
          
         // 对视图进行替换，把黄色替换为蓝色
         [self UpdateSubView: self.blueViewController oldCtrl: self.yellowViewController];
     }
     
-    
+    // 增加切换动画
+    // 动画提交给IOS系统应用
+    [UIView commitAnimations];
 }
 
 #pragma mark - 此函数仅供 switchViews调用
