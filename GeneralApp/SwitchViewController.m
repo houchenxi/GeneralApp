@@ -34,4 +34,7 @@
 }
 */
 
+- (IBAction)switchViews:(id)sender {
+}
+
 @end
