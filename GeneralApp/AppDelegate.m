@@ -22,7 +22,7 @@
     
     // 创建根控制器实例，并且赋给AppDelegate的属性保存
     self.switchViewController = [[SwitchViewController alloc]
-                                 initWithNibName:@"SwitchView" bundle:nil];
+                                 initWithNibName:@"SwitchViewController" bundle:nil];
 
     // 从SwitchViewController.xib中加载视图
     UIView* switchView = self.switchViewController.view;
