@@ -7,6 +7,8 @@
 //
 
 #import "SwitchViewController.h"
+#import "BlueViewController.h"
+#import "YellowViewController.h"
 
 @interface SwitchViewController ()
 
@@ -16,7 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    // 完成主控制器视图加载后
+    
+    // 加载蓝色视图
+    self.blueViewController = [ [BlueViewController alloc]
+                               initWithNibName:@"BlueViewController" bundle:nil ];
+    
+    // 将蓝色视图放入主控制器视图显示出来
+    [self.view insertSubview:self.blueViewController.view atIndex:0 ];
 }
 
 - (void)didReceiveMemoryWarning {
