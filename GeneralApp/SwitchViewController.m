@@ -53,7 +53,7 @@
 - (IBAction)switchViews:(id)sender {
     
     // 增加切换动画
-    // 设置动画的变化速度特征和播放事件
+    // 设置动画的变化速度特征和播放时间长度
     [UIView beginAnimations:@"View Flip" context:nil];
     [UIView setAnimationDuration: 1.25];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
