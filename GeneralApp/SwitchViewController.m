@@ -44,6 +44,7 @@
 }
 */
 
+#pragma mark - 此函数用来切换主视图的子视图
 - (IBAction)switchViews:(id)sender {
     
     if (self.yellowViewController.view.superview == nil) {
@@ -70,10 +71,11 @@
     
 }
 
+#pragma mark - 此函数仅供 switchViews调用
 - (void) UpdateSubView: (UIViewController*)newCtrl oldCtrl: (UIViewController*) old {
-        // 移除蓝色视图
+        // 移除old控制器的视图
         [old.view removeFromSuperview];
-        // 替换为黄色视图
+        // 替换为newCtrl控制器的视图
         [self.view insertSubview: newCtrl.view atIndex:0];
 }
 
