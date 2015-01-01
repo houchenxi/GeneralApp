@@ -34,4 +34,8 @@
 }
 */
 
+#pragma mark - 响应按钮按下的动作方法
+- (IBAction)buttonPressed{
+}
+
 @end

@@ -10,4 +10,6 @@
 
 @interface BlueViewController : UIViewController
 
+- (IBAction)buttonPressed;
+
 @end
