@@ -36,6 +36,15 @@
 
 #pragma mark - 响应按钮按下的动作方法
 - (IBAction)buttonPressed{
+    
+    [[[UIAlertView alloc] initWithTitle:
+     
+     @"按钮按下的标题"
+    message:@"这是按钮按下的消息"
+    delegate:nil
+    cancelButtonTitle:@"关闭"
+    otherButtonTitles:nil] show];
+    
 }
 
 @end

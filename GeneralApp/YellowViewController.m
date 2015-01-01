@@ -35,6 +35,15 @@
 */
 
 - (IBAction)buttonPressed{
+    
+    [[[UIAlertView alloc] initWithTitle:
+      
+      @"按钮按下的标题"
+        message:@"这是按钮按下的消息"
+        delegate:nil
+      cancelButtonTitle:@"关闭"
+      otherButtonTitles:nil] show];
+
 }
 
 @end
