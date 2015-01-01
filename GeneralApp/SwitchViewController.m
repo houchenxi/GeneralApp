@@ -31,7 +31,12 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (self.blueViewController.view.superview == nil) {
+        self.blueViewController = nil;
+    } else {
+        self.yellowViewController = nil;
+    }
 }
 
 /*
