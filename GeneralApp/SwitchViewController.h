@@ -18,4 +18,6 @@
 
 - (IBAction)switchViews :(id)sender;
 
+- (void) UpdateSubView: (UIViewController*)newCtrl oldCtrl: (UIViewController*) old;
+
 @end

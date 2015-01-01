@@ -45,6 +45,36 @@
 */
 
 - (IBAction)switchViews:(id)sender {
+    
+    if (self.yellowViewController.view.superview == nil) {
+        
+        // 加载黄色视图的代码
+        if (self.yellowViewController == nil) {
+            self.yellowViewController =
+            [ [YellowViewController alloc] initWithNibName:@"YellowViewController" bundle:nil ];
+        }
+        
+        // 对视图进行替换，把蓝色替换为黄色
+        [self UpdateSubView: self.yellowViewController oldCtrl: self.blueViewController];
+    } else {
+        // 加载蓝色视图的代码
+        if (self.blueViewController == nil) {
+            self.blueViewController =
+            [ [BlueViewController alloc] initWithNibName:@"BlueViewController" bundle:nil ];
+        }
+         
+        // 对视图进行替换，把黄色替换为蓝色
+        [self UpdateSubView: self.blueViewController oldCtrl: self.yellowViewController];
+    }
+    
+    
+}
+
+- (void) UpdateSubView: (UIViewController*)newCtrl oldCtrl: (UIViewController*) old {
+        // 移除蓝色视图
+        [old.view removeFromSuperview];
+        // 替换为黄色视图
+        [self.view insertSubview: newCtrl.view atIndex:0];
 }
 
 @end
